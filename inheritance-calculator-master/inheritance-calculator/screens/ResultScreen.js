@@ -29,13 +29,17 @@ const ResultScreen = ({ route, navigation }) => {
     sons,
     daughters,
     fullbrothers,
-    paternalHalf,
     fullsisters,
-    trueGrandfather,
-    trueGrandmother,
-    sonsDaughter,
-    uterineBrother,
-    maternalHalf } = route.params;
+    maternalSiblings,
+    paternalGrandfather,
+    maternalGrandmother,
+    paternalGrandmother,
+    fullNephew,
+    paternalNephew,
+    fullUncle,
+    paternalUncle,
+    fullCousin,
+    paternalCousin } = route.params;
   const [result, setResult] = useState({});
   // const [chartData, setChartData] = useState([]);
 
@@ -87,10 +91,7 @@ const ResultScreen = ({ route, navigation }) => {
     shares.father =remainingWealth * 1 / 6;
     }
 
-    // True Grandfather
-    if (trueGrandfather ==="yes" && father === 'no') {
-    shares.trueGrandfather =remainingWealth * 1 / 6;
-    }
+   
 
     // Mother
     if (mother === 'yes' && (!daughters || daughters === 0) && (!sons || sons === 0 )) {
@@ -99,10 +100,7 @@ const ResultScreen = ({ route, navigation }) => {
     shares.mother =remainingWealth * 1 / 6;
     }
 
-    // True Grandmother
-    if (trueGrandmother === 'yes' && mother === "no") {
-    shares.trueGrandmother =remainingWealth * 1 / 6;
-    }
+   
 
     // Daughter
     if (daughters === 1) {
@@ -112,10 +110,7 @@ const ResultScreen = ({ route, navigation }) => {
     }
  // Son's Daughter
  
-    // Son's Daughter
-    if (sonsDaughter > 1 && daughters > 0 && sons == 0 && daughters < 2) {
-    shares.sonsDaughter =remainingWealth * 2 / 3;
-    }else if (sonsDaughter ==1&& daughters > 0 && sons == 0 && daughters < 2){ shares.sonsDaughter =remainingWealth * 1 / 2;}  
+   
  // Consanguine Sister
  
     if (fullsisters === 1&& sons == 0 && (!trueGrandfather || trueGrandfather =="no") && (!father || father === no)&& daughters == 0) {
