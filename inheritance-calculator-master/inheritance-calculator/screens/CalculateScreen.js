@@ -14,15 +14,15 @@ const CalculateScreen = ({ navigation }) => {
   const [fullbrothers, setFullBrothers] = useState(0);
   const [fullsisters, setFullSisters] = useState(0);
   const [maternalSiblings, setMaternalSiblings] = useState(0);
-  const [paternalGrandfather, setPaternalGrandfather] = useState('');
-  const [maternalGrandmother, setMaternalGrandmother] = useState('');
+  const [trueGrandfather, settrueGrandfather] = useState('');
+  const [trueGrandmother, settrueGrandmother] = useState('');
   const [paternalGrandmother, setPaternalGrandmother] = useState('');
   const [fullNephew, setFullNephew] = useState(0);
-  const [paternalNephew, setPaternalNephew] = useState(0);
+  const [paternalHalf, setpaternalHalf] = useState(0);
   const [fullUncle, setFullUncle] = useState(0);
-  const [paternalUncle, setPaternalUncle] = useState(0);
-  const [fullCousin, setFullCousin] = useState(0);
-  const [paternalCousin, setPaternalCousin] = useState(0);
+  const [maternalHalf, setmaternalHalf] = useState(0);
+  const [sonsDaughter, setsonsDaughter] = useState(0);
+  const [uterineBrother, setuterineBrother] = useState(0);
  
 
 
@@ -47,15 +47,16 @@ const CalculateScreen = ({ navigation }) => {
       fullbrothers,
       fullsisters,
       maternalSiblings,
-      paternalGrandfather,
-      maternalGrandmother,
+      trueGrandfather,
+      trueGrandmother,
       paternalGrandmother,
       fullNephew,
-      paternalNephew,
+      paternalHalf,
       fullUncle,
-      paternalUncle,
-      fullCousin,
-      paternalCousin
+      maternalHalf,
+      sonsDaughter,
+      uterineBrother,
+      
     });
   };
 
@@ -182,7 +183,7 @@ const CalculateScreen = ({ navigation }) => {
 
 <Text style={styles.label}>Is Paternal Grandfather Alive?</Text>
       <View style={styles.pickerContainer}>
-        <Picker selectedValue={father} onValueChange={(itemValue) => setPaternalGrandfather(itemValue)} style={styles.picker}>
+        <Picker selectedValue={father} onValueChange={(itemValue) => settrueGrandfather(itemValue)} style={styles.picker}>
           <Picker.Item label="Select" value="" />
           <Picker.Item label="Yes" value="yes" />
           <Picker.Item label="No" value="no" />
@@ -191,7 +192,7 @@ const CalculateScreen = ({ navigation }) => {
 
       <Text style={styles.label}>Is Maternal GrandmotherAlive?</Text>
       <View style={styles.pickerContainer}>
-        <Picker selectedValue={father} onValueChange={(itemValue) => setMaternalGrandmother(itemValue)} style={styles.picker}>
+        <Picker selectedValue={father} onValueChange={(itemValue) => settrueGrandmother(itemValue)} style={styles.picker}>
           <Picker.Item label="Select" value="" />
           <Picker.Item label="Yes" value="yes" />
           <Picker.Item label="No" value="no" />
@@ -221,8 +222,8 @@ const CalculateScreen = ({ navigation }) => {
       <TextInput
         style={styles.input}
         keyboardType="numeric"
-        value={paternalNephew.toString()}
-        onChangeText={(value) => setPaternalNephew(Number(value))}
+        value={paternalHalf.toString()}
+        onChangeText={(value) => setpaternalHalf(Number(value))}
         placeholder="Enter number of Paternal 2above"
       />
 
@@ -239,8 +240,8 @@ const CalculateScreen = ({ navigation }) => {
       <TextInput
         style={styles.input}
         keyboardType="numeric"
-        value={paternalUncle.toString()}
-        onChangeText={(value) => setPaternalUncle(Number(value))}
+        value={maternalHalf.toString()}
+        onChangeText={(value) => setmaternalHalf(Number(value))}
         placeholder="Enter number of Paternal 2above"
       />
 
@@ -248,8 +249,8 @@ const CalculateScreen = ({ navigation }) => {
       <TextInput
         style={styles.input}
         keyboardType="numeric"
-        value={fullCousin.toString()}
-        onChangeText={(value) => setFullCousin(Number(value))}
+        value={sonsDaughter.toString()}
+        onChangeText={(value) => setsonsDaughter(Number(value))}
         placeholder="Enter number of FullNephew 2above"
       />
 
@@ -257,8 +258,8 @@ const CalculateScreen = ({ navigation }) => {
       <TextInput
         style={styles.input}
         keyboardType="numeric"
-        value={paternalCousin.toString()}
-        onChangeText={(value) => setPaternalCousin(Number(value))}
+        value={uterineBrother.toString()}
+        onChangeText={(value) => setuterineBrother(Number(value))}
         placeholder="Enter number of Paternal 2above"
       />
 
